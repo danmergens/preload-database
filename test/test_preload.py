@@ -155,9 +155,10 @@ class TestStream(PreloadUnitTest):
         self.assertEqual(set(nutnr_a_sample.needs_external(nutnr_a_sample_limited_parameters)), set())
 
     def test_needs_cc(self):
-        needed = [u'CC_scale_factor4', u'CC_scale_factor3', u'CC_scale_factor2', u'CC_scale_factor1']
-        adcp_velocity_glider = Stream.query.get(746)
-        self.assertEqual(adcp_velocity_glider.needs_cc, set(needed))
+        needed = [u'CC_lon', u'CC_lat', u'CC_scale_factor4', u'CC_scale_factor3', u'CC_scale_factor2',
+                  u'CC_scale_factor1']
+        adcp_velocity_beam = Stream.query.get(743)
+        self.assertEqual(adcp_velocity_beam.needs_cc, set(needed))
 
     def test_needs_met(self):
         nutnr_a_sample = Stream.query.get(342)
